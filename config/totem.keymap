@@ -148,7 +148,7 @@
         // row 2
 
         combo_zx {
-            bindings = <&kp LEFT_SHIFT>;
+            bindings = <&tog 3>;
             key-positions = <21 22>;
             timeout-ms = <20>;
             slow-release;
@@ -587,18 +587,6 @@
     };
 
     behaviors {
-        sh: sh {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SH";
-            bindings = <&kp>, <&sk>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <180>;
-            hold-while-undecided;
-            hold-while-undecided-linger;
-            flavor = "tap-preferred";
-        };
-
         comma: comma {
             compatible = "zmk,behavior-mod-morph";
             label = "COMMA";
@@ -636,15 +624,6 @@
             #binding-cells = <2>;
             tapping-term-ms = <170>;
             flavor = "tap-preferred";
-        };
-
-        slt: slt {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SLT";
-            bindings = <&mo>, <&sk>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
         };
     };
 
@@ -717,6 +696,15 @@
        &none         &none         &none         &none         &bt BT_CLR      &kp F6   &kp F7   &kp F8   &kp F9   &kp F10
 &none  &kp A         &none         &none         &none         &none           &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &none
                                    &none         &none         &none           &none    &none    &none
+            >;
+        };
+
+        steno {
+            bindings = <
+       &kp Q  &kp W  &kp E  &kp R  &kp T    &kp Y  &kp U  &kp I  &kp O  &kp P
+       &kp A  &kp S  &kp D  &kp F  &kp G    &kp H  &kp J  &kp K  &kp L  &kp SEMI
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &kp APOS  &kp LBKT
+                     &none  &kp C  &kp V    &kp N  &kp M  &none
             >;
         };
 
